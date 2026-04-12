@@ -28,8 +28,8 @@ export function Footer() {
             <h3 className="font-display font-semibold mb-4 text-lg">Quick Links</h3>
             <ul className="space-y-3">
               <li><Link to="/" className="text-slate-400 hover:text-brand-cyan transition-colors">Home</Link></li>
-              <li><Link to="/services" className="text-slate-400 hover:text-brand-cyan transition-colors">Services</Link></li>
-              <li><Link to="/pricing" className="text-slate-400 hover:text-brand-cyan transition-colors">Pricing</Link></li>
+              <li><a href="/#services" className="text-slate-400 hover:text-brand-cyan transition-colors">Services</a></li>
+              <li><a href="/#pricing" className="text-slate-400 hover:text-brand-cyan transition-colors">Pricing</a></li>
               <li><Link to="/contact" className="text-slate-400 hover:text-brand-cyan transition-colors">Contact</Link></li>
             </ul>
           </div>

@@ -10,8 +10,8 @@ export function Navbar() {
 
   const links = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'Pricing', path: '/pricing' },
+    { name: 'Services', path: '/#services' },
+    { name: 'Pricing', path: '/#pricing' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -30,24 +30,35 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-brand-cyan relative",
-                  location.pathname === link.path ? "text-white" : "text-slate-400"
-                )}
-              >
-                {link.name}
-                {location.pathname === link.path && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-cyan rounded-full"
-                  />
-                )}
-              </Link>
-            ))}
+            {links.map((link) => {
+              const isHash = link.path.includes('#');
+              return isHash ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  className="text-sm font-medium transition-colors hover:text-brand-cyan relative text-slate-400"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-brand-cyan relative",
+                    location.pathname === link.path ? "text-white" : "text-slate-400"
+                  )}
+                >
+                  {link.name}
+                  {location.pathname === link.path && (
+                    <motion.div
+                      layoutId="navbar-indicator"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-cyan rounded-full"
+                    />
+                  )}
+                </Link>
+              );
+            })}
             <Link
               to="/contact"
               className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:border-brand-cyan/50"
@@ -77,21 +88,33 @@ export function Navbar() {
           className="md:hidden glass-card border-t border-white/10"
         >
           <div className="px-4 pt-2 pb-6 space-y-1">
-            {links.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "block px-3 py-3 rounded-md text-base font-medium",
-                  location.pathname === link.path
-                    ? "bg-white/10 text-white"
-                    : "text-slate-400 hover:bg-white/5 hover:text-white"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {links.map((link) => {
+              const isHash = link.path.includes('#');
+              return isHash ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-3 rounded-md text-base font-medium text-slate-400 hover:bg-white/5 hover:text-white"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "block px-3 py-3 rounded-md text-base font-medium",
+                    location.pathname === link.path
+                      ? "bg-white/10 text-white"
+                      : "text-slate-400 hover:bg-white/5 hover:text-white"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
             <div className="pt-4">
               <Link
                 to="/contact"

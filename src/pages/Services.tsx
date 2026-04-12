@@ -49,7 +49,7 @@ export function Services() {
   ];
 
   return (
-    <div className="pt-32 pb-24">
+    <section id="services" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.h1 
@@ -118,6 +118,6 @@ export function Services() {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

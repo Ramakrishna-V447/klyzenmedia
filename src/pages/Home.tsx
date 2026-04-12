@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, Zap, Target, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Services } from './Services';
+import { Pricing } from './Pricing';
 
 export function Home() {
   return (
@@ -57,12 +59,12 @@ export function Home() {
                 Get a Free Consultation
                 <ArrowRight size={20} />
               </Link>
-              <Link
-                to="/services"
-                className="w-full sm:w-auto px-8 py-4 rounded-full glass-card text-white font-semibold text-lg hover:bg-white/10 transition-all"
+              <a
+                href="#services"
+                className="w-full sm:w-auto px-8 py-4 rounded-full glass-card text-white font-semibold text-lg hover:bg-white/10 transition-all text-center"
               >
                 Explore Services
-              </Link>
+              </a>
             </motion.div>
           </div>
         </div>
@@ -177,6 +179,9 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      <Services />
+      <Pricing />
 
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">

@@ -10,6 +10,10 @@
   --color-brand-cyan: #22D3EE;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #050505;
   color: #ffffff;
