@@ -71,13 +71,13 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-black/40 border-y border-white/5">
+    <section id="pricing" className="py-24 bg-slate-50 border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-display font-bold mb-6"
+            className="text-4xl md:text-6xl font-display font-bold mb-6 text-slate-900"
           >
             Simple, Transparent <span className="text-gradient">Pricing</span>
           </motion.h1>
@@ -85,7 +85,7 @@ export function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-400"
+            className="text-lg text-slate-600"
           >
             Invest in your brand's growth with our tailored packages. No hidden fees. Cancel anytime.
           </motion.p>
@@ -94,10 +94,10 @@ export function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center justify-center gap-6 mt-8 text-sm font-medium text-slate-300"
+            className="flex items-center justify-center gap-6 mt-8 text-sm font-medium text-slate-700"
           >
-            <div className="flex items-center gap-2"><ShieldCheck className="text-brand-cyan" size={18} /> No hidden fees</div>
-            <div className="flex items-center gap-2"><ShieldCheck className="text-brand-cyan" size={18} /> Cancel anytime</div>
+            <div className="flex items-center gap-2"><ShieldCheck className="text-brand-primary" size={18} /> No hidden fees</div>
+            <div className="flex items-center gap-2"><ShieldCheck className="text-brand-primary" size={18} /> Cancel anytime</div>
           </motion.div>
         </div>
 
@@ -110,28 +110,28 @@ export function Pricing() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               className={cn(
-                "relative glass-card rounded-3xl p-8 flex flex-col hover:scale-105 transition-transform duration-300",
-                plan.popular ? "border-brand-cyan/50 shadow-[0_0_30px_rgba(34,211,238,0.15)]" : "border-white/10"
+                "relative glass-card rounded-3xl p-8 flex flex-col hover:scale-105 transition-all duration-300",
+                plan.popular ? "border-2 border-brand-primary shadow-xl shadow-brand-primary/10" : "border border-slate-200 hover:border-brand-primary/30"
               )}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-brand-purple to-brand-cyan text-white text-xs font-bold uppercase tracking-wider">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white text-xs font-bold uppercase tracking-wider">
                   Most Popular
                 </div>
               )}
               
               <div className="mb-8">
-                <h3 className="text-xl font-display font-bold text-white mb-4 capitalize">{plan.name}</h3>
+                <h3 className="text-xl font-display font-bold text-slate-900 mb-4 capitalize">{plan.name}</h3>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">{plan.price}</span>
-                  <span className="text-slate-400">{plan.period}</span>
+                  <span className="text-4xl font-bold text-slate-900">{plan.price}</span>
+                  <span className="text-slate-600">{plan.period}</span>
                 </div>
               </div>
               
               <ul className="space-y-4 mb-8 flex-grow">
                 {plan.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex items-start gap-3 text-sm text-slate-300">
-                    <Check className="text-brand-cyan shrink-0 mt-0.5" size={16} />
+                  <li key={fIdx} className="flex items-start gap-3 text-sm text-slate-700">
+                    <Check className="text-brand-primary shrink-0 mt-0.5" size={16} />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -142,8 +142,8 @@ export function Pricing() {
                 className={cn(
                   "w-full py-3 rounded-xl font-semibold text-center transition-all",
                   plan.popular 
-                    ? "bg-gradient-to-r from-brand-purple to-brand-cyan text-white hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]" 
-                    : "bg-white/10 text-white hover:bg-white/20"
+                    ? "bg-brand-primary text-white hover:bg-brand-secondary hover:shadow-md" 
+                    : "bg-slate-100 text-slate-900 hover:bg-slate-200"
                 )}
               >
                 Get Started
@@ -157,14 +157,14 @@ export function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto glass-card rounded-3xl p-8 md:p-12"
+          className="max-w-3xl mx-auto glass-card rounded-3xl p-8 md:p-12 border border-slate-200"
         >
-          <h3 className="text-2xl font-display font-bold text-center mb-8">Available Add-ons</h3>
+          <h3 className="text-2xl font-display font-bold text-center mb-8 text-slate-900">Available Add-ons</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {addons.map((addon, idx) => (
-              <div key={idx} className="text-center p-6 rounded-2xl bg-white/5 border border-white/5">
-                <div className="font-semibold text-white mb-2">{addon.name}</div>
-                <div className="text-brand-cyan font-medium">{addon.price}</div>
+              <div key={idx} className="text-center p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-primary/20 transition-colors">
+                <div className="font-semibold text-slate-900 mb-2">{addon.name}</div>
+                <div className="text-brand-primary font-medium">{addon.price}</div>
               </div>
             ))}
           </div>

@@ -55,7 +55,7 @@ export function Services() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-display font-bold mb-6"
+            className="text-4xl md:text-6xl font-display font-bold mb-6 text-slate-900"
           >
             Our <span className="text-gradient">Services</span>
           </motion.h1>
@@ -63,7 +63,7 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-400"
+            className="text-lg text-slate-600"
           >
             Comprehensive digital solutions designed to elevate your brand and drive measurable growth.
           </motion.p>
@@ -77,17 +77,17 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="glass-card p-8 rounded-3xl hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] hover:border-brand-cyan/30 transition-all duration-300 group"
+              className="glass-card p-8 rounded-3xl hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-primary/10 hover:border-brand-primary/20 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-purple/20 to-brand-cyan/20 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-display font-bold mb-4">{service.title}</h3>
-              <p className="text-slate-400 mb-6 line-clamp-3">{service.desc}</p>
+              <h3 className="text-2xl font-display font-bold mb-4 text-slate-900">{service.title}</h3>
+              <p className="text-slate-600 mb-6 line-clamp-3">{service.desc}</p>
               <ul className="space-y-2">
                 {service.benefits.map((benefit, bIdx) => (
-                  <li key={bIdx} className="flex items-center gap-2 text-sm text-slate-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-cyan" />
+                  <li key={bIdx} className="flex items-center gap-2 text-sm text-slate-700">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
                     {benefit}
                   </li>
                 ))}
@@ -102,15 +102,15 @@ export function Services() {
           viewport={{ once: true }}
           className="glass-card rounded-3xl p-12 text-center relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/10 to-brand-cyan/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 to-brand-secondary/5" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Not sure what you need?</h2>
-            <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-slate-900">Not sure what you need?</h2>
+            <p className="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
               Let's hop on a call. We'll audit your current digital presence and recommend the exact services you need to hit your goals.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-brand-purple to-brand-cyan text-white font-bold text-lg hover:scale-105 transition-transform"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-primary text-white font-bold text-lg hover:bg-brand-secondary transition-colors"
             >
               Get a Free Strategy Call
               <ArrowRight size={20} />
