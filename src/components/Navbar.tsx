@@ -20,9 +20,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center">
-              <span className="text-white font-display font-bold text-xl">K</span>
-            </div>
+            {/* The company logo will be loaded from the public folder */}
+            <img src="/logo.png" alt="Klyzen Media Logo" className="h-12 w-auto object-contain" />
             <span className="font-display font-bold text-2xl tracking-tight text-slate-900">
               Klyzen<span className="text-brand-primary">Media</span>
             </span>
