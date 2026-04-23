@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src="/logo.png" alt="Klyzen Media Logo" className="h-12 w-auto object-contain" />
+             <img src="/logo.png" alt="Klyzen Media Logo" className="h-12 w-auto object-contain" />
               <span className="font-display font-bold text-2xl tracking-tight text-slate-900">
                 Klyzen<span className="text-brand-primary">Media</span>
               </span>
