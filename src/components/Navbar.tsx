@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../lib/utils';
-import logo from '../assets/logo.png';
+import { logoBase64 } from '../assets/logo-b64';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2">
             {/* The company logo will be loaded from the public folder */}
-            <img src={logo} alt="Klyzen Media Logo" className="h-12 w-auto object-contain" />
+            <img src={logoBase64} alt="Klyzen Media Logo" className="h-12 w-auto object-contain" />
             <span className="font-display font-bold text-2xl tracking-tight text-slate-900">
               Klyzen<span className="text-brand-primary">Media</span>
             </span>
