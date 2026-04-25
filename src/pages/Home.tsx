@@ -11,8 +11,72 @@ export function Home() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-secondary/10 rounded-full blur-[120px]" />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotate: [0, 45, -45, 0],
+              opacity: [0.3, 0.5, 0.3] 
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[10%] left-[10%] w-[30rem] h-[30rem] bg-brand-primary/30 rounded-full blur-[120px] mix-blend-screen" 
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.5, 1],
+              rotate: [0, -30, 30, 0],
+              opacity: [0.2, 0.4, 0.2] 
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear", delay: 2 }}
+            className="absolute bottom-[10%] right-[10%] w-[40rem] h-[30rem] bg-brand-accent/20 rounded-[100%] blur-[120px] mix-blend-screen" 
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1.2, 1, 1.2],
+              x: [0, 100, 0],
+              y: [0, -50, 0]
+            }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[40%] left-[40%] w-[20rem] h-[20rem] bg-brand-secondary/20 rounded-full blur-[100px] mix-blend-screen" 
+          />
+          
+          {/* Animated Freelancing/Productivity Images */}
+          <div className="hidden lg:block opacity-70">
+            <motion.div
+              className="absolute top-24 left-[5%] w-64 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700/60 glass-card origin-center"
+              animate={{ y: [0, -20, 0], rotate: [-4, 0, -4] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="absolute inset-0 bg-brand-primary/10 z-10 mix-blend-overlay"></div>
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=80" alt="Web Development & Code" className="w-full h-full object-cover" />
+            </motion.div>
+            
+            <motion.div
+              className="absolute top-32 right-[2%] w-56 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700/60 glass-card origin-center"
+              animate={{ y: [0, 25, 0], rotate: [6, 2, 6] }}
+              transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              <div className="absolute inset-0 bg-brand-secondary/10 z-10 mix-blend-overlay"></div>
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80" alt="Team Productivity & Strategy" className="w-full h-full object-cover" />
+            </motion.div>
+            
+            <motion.div
+              className="absolute bottom-20 left-[10%] w-52 h-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700/60 glass-card origin-center"
+              animate={{ y: [0, -15, 0], rotate: [5, 8, 5] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            >
+              <div className="absolute inset-0 bg-brand-accent/10 z-10 mix-blend-overlay"></div>
+              <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=500&q=80" alt="Creative Content Editing" className="w-full h-full object-cover" />
+            </motion.div>
+
+            <motion.div
+              className="absolute bottom-12 right-[12%] w-60 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700/60 glass-card origin-center"
+              animate={{ y: [0, 20, 0], rotate: [-6, -2, -6] }}
+              transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            >
+              <div className="absolute inset-0 bg-brand-highlight/10 z-10 mix-blend-overlay"></div>
+              <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&w=500&q=80" alt="Freelance Setup & Design" className="w-full h-full object-cover" />
+            </motion.div>
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -21,47 +85,59 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 relative border border-slate-200"
             >
               <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
               <span className="text-sm font-medium text-slate-700">Turning Ideas into Impact</span>
             </motion.div>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 leading-tight text-slate-900"
-            >
-              Grow Your Brand With <br className="hidden md:block" />
-              <span className="text-gradient">Purpose & Performance</span>
-            </motion.h1>
+            <div className="relative">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[120%] bg-brand-primary/20 blur-[100px] rounded-full mix-blend-screen pointer-events-none -z-10" />
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight mb-6 leading-tight text-slate-900"
+              >
+                Grow Your Brand With <br className="hidden md:block" />
+                <span className="text-gradient drop-shadow-xl relative inline-block">
+                  Purpose & Performance
+                  <motion.span 
+                    className="absolute -top-4 -right-4 md:-right-8 text-brand-accent text-3xl md:text-4xl"
+                    animate={{ rotate: 360, scale: [1, 1.2, 1] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    ✧
+                  </motion.span>
+                </span>
+              </motion.h1>
+            </div>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed border-l-2 border-brand-primary/50 pl-6 text-left md:text-center md:border-l-0 md:pl-0"
             >
               We specialize in creating powerful digital experiences through website design, social media marketing, video editing, SEO, and creative content.
             </motion.p>
             
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-primary text-white font-semibold text-lg hover:bg-brand-secondary hover:shadow-lg hover:shadow-brand-primary/20 transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-primary text-white font-bold text-lg hover:bg-brand-secondary shadow-lg hover:shadow-brand-primary/20 hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-2 group"
               >
                 Get a Free Consultation
-                <ArrowRight size={20} />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="#services"
-                className="w-full sm:w-auto px-8 py-4 rounded-full glass-card text-slate-900 font-semibold text-lg hover:bg-slate-50 transition-all text-center"
+                className="w-full sm:w-auto px-8 py-4 rounded-full glass-card text-slate-900 font-semibold text-lg hover:bg-white/50 hover:border-slate-500 transition-all text-center group"
               >
                 Explore Services
               </a>
@@ -75,10 +151,10 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-slate-900">
                 We Turn Ideas Into <span className="text-gradient">Impact</span>
@@ -90,24 +166,38 @@ export function Home() {
                 Every strategy we craft is focused on performance and brand growth, not just trends. We don't just create content; we build digital ecosystems that convert.
               </p>
               
-              <div className="flex items-center gap-6">
+              <motion.div 
+                className="flex items-center gap-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 <div className="flex -space-x-4">
-                  {[1, 2, 3, 4].map((i) => (
-                    <img key={i} src={`https://i.pravatar.cc/100?img=${i}`} alt="Client" className="w-12 h-12 rounded-full border-2 border-white" />
+                  {[1, 2, 3, 4].map((i, idx) => (
+                    <motion.img 
+                      key={i} 
+                      src={`https://i.pravatar.cc/100?img=${i}`} 
+                      alt="Client" 
+                      className="w-12 h-12 rounded-full border-2 border-white"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.4 + (idx * 0.1), type: "spring" }}
+                    />
                   ))}
                 </div>
                 <div className="text-sm text-slate-600">
                   <strong className="text-slate-900 text-lg block">50+</strong>
                   Happy Clients
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, x: 50, scale: 0.9, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-brand-secondary/10 rounded-3xl blur-2xl" />
@@ -136,7 +226,7 @@ export function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-white border-y border-slate-200">
+      <section className="py-24 border-y border-slate-200 glass-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-slate-900">Why Choose <span className="text-gradient">Klyzen Media</span></h2>
@@ -163,13 +253,13 @@ export function Home() {
             ].map((feature, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="glass-card p-8 rounded-2xl hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-primary/5 transition-all duration-300"
+                initial={{ opacity: 0, y: 50, scale: 0.9, rotateX: 20 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: idx * 0.15, type: "spring", bounce: 0.2 }}
+                className="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-300"
               >
-                <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-white/40 flex items-center justify-center mb-6 shadow-sm backdrop-blur-md border border-slate-200">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-display font-bold mb-3 text-slate-900">{feature.title}</h3>
@@ -187,15 +277,32 @@ export function Home() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-primary/5" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-slate-900">Ready to Scale Your Brand?</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-900">Ready to Scale Your Brand?</h2>
           <p className="text-xl text-slate-600 mb-10">Stop blending in. Let's create a digital presence that demands attention and drives revenue.</p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-primary text-white font-bold text-lg hover:bg-brand-secondary hover:shadow-lg hover:shadow-brand-primary/20 transition-all hover:-translate-y-1"
+          <motion.div
+            animate={{ 
+              scale: [1, 1.02, 1],
+              boxShadow: [
+                "0px 0px 0px 0px rgba(139, 92, 246, 0)",
+                "0px 0px 20px 5px rgba(139, 92, 246, 0.15)",
+                "0px 0px 0px 0px rgba(139, 92, 246, 0)"
+              ]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="inline-block rounded-full"
           >
-            Get Your Free Consultation
-            <ArrowRight size={20} />
-          </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-primary text-white font-bold text-lg hover:bg-brand-secondary shadow-lg hover:shadow-brand-primary/20 hover:shadow-xl transition-all flex items-center justify-center group"
+            >
+              Get Your Free Consultation
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>

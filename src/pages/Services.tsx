@@ -49,13 +49,13 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="py-24 border-t border-white/20 glass-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-display font-bold mb-6 text-slate-900"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-900"
           >
             Our <span className="text-gradient">Services</span>
           </motion.h1>
@@ -73,15 +73,29 @@ export function Services() {
           {services.map((service, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="glass-card p-8 rounded-3xl hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-primary/10 hover:border-brand-primary/20 transition-all duration-300 group"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              whileHover="hover"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1, type: "spring", bounce: 0.2 }}
+              className="glass-card p-8 rounded-3xl hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-primary/15 hover:border-brand-primary/30 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+              <motion.div 
+                variants={{
+                  hover: {
+                    scale: [1, 1.15, 1.05],
+                    y: [0, -5, 0],
+                    transition: {
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }
+                }}
+                className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300"
+              >
                 {service.icon}
-              </div>
+              </motion.div>
               <h3 className="text-2xl font-display font-bold mb-4 text-slate-900">{service.title}</h3>
               <p className="text-slate-600 mb-6 line-clamp-3">{service.desc}</p>
               <ul className="space-y-2">
@@ -104,16 +118,16 @@ export function Services() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 to-brand-secondary/5" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-slate-900">Not sure what you need?</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold mb-6 text-slate-900">Not sure what you need?</h2>
             <p className="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
               Let's hop on a call. We'll audit your current digital presence and recommend the exact services you need to hit your goals.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-primary text-white font-bold text-lg hover:bg-brand-secondary transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-primary text-white font-bold text-lg hover:bg-brand-secondary shadow-lg hover:shadow-brand-primary/20 hover:shadow-xl transition-all group"
             >
               Get a Free Strategy Call
-              <ArrowRight size={20} />
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </motion.div>

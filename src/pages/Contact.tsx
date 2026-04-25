@@ -7,11 +7,12 @@ export function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col justify-center"
           >
-            <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-slate-900">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-900">
               Let's Build Something <span className="text-gradient">Amazing</span>
             </h1>
             <p className="text-lg text-slate-600 mb-12 max-w-lg">
@@ -19,7 +20,12 @@ export function Contact() {
             </p>
             
             <div className="space-y-8">
-              <div className="flex items-center gap-6 glass-card p-6 rounded-2xl border border-slate-200 hover:border-brand-primary/30 transition-colors">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex items-center gap-6 glass-card p-6 rounded-2xl border border-slate-200 hover:border-brand-primary/30 transition-colors hover:shadow-lg hover:shadow-brand-primary/10 hover:-translate-y-1"
+              >
                 <div className="w-14 h-14 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0">
                   <Phone size={24} />
                 </div>
@@ -29,9 +35,14 @@ export function Contact() {
                     +91 8106974731
                   </a>
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="flex items-center gap-6 glass-card p-6 rounded-2xl border border-slate-200 hover:border-brand-accent/30 transition-colors">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex items-center gap-6 glass-card p-6 rounded-2xl border border-slate-200 hover:border-brand-accent/30 transition-colors hover:shadow-lg hover:shadow-brand-accent/10 hover:-translate-y-1"
+              >
                 <div className="w-14 h-14 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent shrink-0">
                   <Mail size={24} />
                 </div>
@@ -41,14 +52,14 @@ export function Contact() {
                     hello@klyzenmedia.com
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
           
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
+            initial={{ opacity: 0, x: 50, scale: 0.9, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <div className="glass-card p-8 md:p-10 rounded-3xl border border-slate-200 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-[80px] pointer-events-none" />
@@ -61,7 +72,7 @@ export function Contact() {
                     <label className="text-sm font-medium text-slate-700">First Name</label>
                     <input 
                       type="text" 
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all"
+                      className="w-full bg-white/60 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:bg-white focus:shadow-md focus:-translate-y-0.5 hover:border-slate-300 shadow-sm backdrop-blur-sm transition-all duration-300"
                       placeholder="John"
                     />
                   </div>
@@ -69,7 +80,7 @@ export function Contact() {
                     <label className="text-sm font-medium text-slate-700">Last Name</label>
                     <input 
                       type="text" 
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all"
+                      className="w-full bg-white/60 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:bg-white focus:shadow-md focus:-translate-y-0.5 hover:border-slate-300 shadow-sm backdrop-blur-sm transition-all duration-300"
                       placeholder="Doe"
                     />
                   </div>
@@ -79,14 +90,14 @@ export function Contact() {
                   <label className="text-sm font-medium text-slate-700">Email Address</label>
                   <input 
                     type="email" 
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all"
+                    className="w-full bg-white/60 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:bg-white focus:shadow-md focus:-translate-y-0.5 hover:border-slate-300 shadow-sm backdrop-blur-sm transition-all duration-300"
                     placeholder="john@example.com"
                   />
                 </div>
                 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-slate-700">Service Interested In</label>
-                  <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all appearance-none">
+                  <select className="w-full bg-white/60 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:bg-white focus:shadow-md focus:-translate-y-0.5 hover:border-slate-300 shadow-sm backdrop-blur-sm transition-all duration-300 appearance-none">
                     <option value="">Select a service...</option>
                     <option value="smm">Social Media Marketing</option>
                     <option value="web">Website Development</option>
@@ -99,17 +110,17 @@ export function Contact() {
                   <label className="text-sm font-medium text-slate-700">Message</label>
                   <textarea 
                     rows={4}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all resize-none"
+                    className="w-full bg-white/60 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-brand-primary focus:bg-white focus:shadow-md focus:-translate-y-0.5 hover:border-slate-300 shadow-sm backdrop-blur-sm transition-all duration-300 resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
                 
                 <button 
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-brand-primary text-white font-bold text-lg hover:bg-brand-secondary hover:shadow-lg hover:shadow-brand-primary/20 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-xl bg-brand-primary text-white font-bold text-lg hover:bg-brand-secondary shadow-lg hover:shadow-brand-primary/20 hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
                 >
                   Get a Free Consultation
-                  <Send size={20} />
+                  <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
               </form>
             </div>

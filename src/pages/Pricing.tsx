@@ -71,13 +71,13 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-slate-50 border-y border-slate-200">
+    <section id="pricing" className="py-24 border-y border-white/20 glass-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-display font-bold mb-6 text-slate-900"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-900"
           >
             Simple, Transparent <span className="text-gradient">Pricing</span>
           </motion.h1>
@@ -101,17 +101,17 @@ export function Pricing() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mb-24">
           {plans.map((plan, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.15, type: "spring", bounce: 0.3 }}
               className={cn(
-                "relative glass-card rounded-3xl p-8 flex flex-col hover:scale-105 transition-all duration-300",
-                plan.popular ? "border-2 border-brand-primary shadow-xl shadow-brand-primary/10" : "border border-slate-200 hover:border-brand-primary/30"
+                "relative glass-card rounded-3xl p-8 flex flex-col hover:-translate-y-2 hover:shadow-2xl transition-all duration-300",
+                plan.popular ? "border-2 border-slate-300 shadow-xl shadow-brand-primary/10" : "border border-slate-200 hover:border-brand-primary/30"
               )}
             >
               {plan.popular && (
@@ -140,10 +140,10 @@ export function Pricing() {
               <Link
                 to="/contact"
                 className={cn(
-                  "w-full py-3 rounded-xl font-semibold text-center transition-all",
+                  "w-full py-3 rounded-xl font-bold text-center transition-all block group",
                   plan.popular 
-                    ? "bg-brand-primary text-white hover:bg-brand-secondary hover:shadow-md" 
-                    : "bg-slate-100 text-slate-900 hover:bg-slate-200"
+                    ? "bg-brand-primary text-white shadow-lg hover:shadow-brand-primary/20 hover:shadow-xl hover:bg-brand-secondary" 
+                    : "glass-card text-slate-900 border border-slate-200 hover:bg-slate-50 hover:border-slate-300"
                 )}
               >
                 Get Started
@@ -162,7 +162,7 @@ export function Pricing() {
           <h3 className="text-2xl font-display font-bold text-center mb-8 text-slate-900">Available Add-ons</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {addons.map((addon, idx) => (
-              <div key={idx} className="text-center p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-primary/20 transition-colors">
+              <div key={idx} className="text-center p-6 rounded-2xl glass-card border border-slate-200 hover:border-brand-primary/50 transition-colors">
                 <div className="font-semibold text-slate-900 mb-2">{addon.name}</div>
                 <div className="text-brand-primary font-medium">{addon.price}</div>
               </div>
