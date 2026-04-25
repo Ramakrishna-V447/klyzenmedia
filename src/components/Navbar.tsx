@@ -11,8 +11,8 @@ export function Navbar() {
 
   const links = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/#services' },
-    { name: 'Pricing', path: '/#pricing' },
+    { name: 'Services', path: '/services' },
+    { name: 'Pricing', path: '/pricing' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -21,7 +21,7 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
-      className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-200"
+      className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-indigo-50 backdrop-blur-md"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -33,7 +33,7 @@ export function Navbar() {
               alt="Klyzen Media Logo" 
               className="h-12 w-auto object-contain" 
             />
-            <span className="font-display font-bold text-2xl tracking-tight text-slate-900 group-hover:text-brand-primary transition-colors">
+            <span className="font-display font-bold text-2xl tracking-tight text-slate-800 group-hover:text-brand-primary transition-colors">
               Klyzen
             </span>
           </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
                   transition={{ delay: 0.1 + (idx * 0.1) }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-sm font-medium transition-colors hover:text-brand-primary relative text-slate-600"
+                  className="text-sm font-medium transition-colors hover:text-brand-primary relative text-slate-800"
                 >
                   {link.name}
                 </motion.a>
@@ -68,14 +68,14 @@ export function Navbar() {
                     to={link.path}
                     className={cn(
                       "text-sm font-medium transition-colors hover:text-brand-primary relative",
-                      location.pathname === link.path ? "text-brand-primary" : "text-slate-600"
+                      location.pathname === link.path ? "text-brand-primary" : "text-slate-800"
                     )}
                   >
                     {link.name}
                     {location.pathname === link.path && (
                       <motion.div
                         layoutId="navbar-indicator"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary rounded-full"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary rounded-2xl"
                       />
                     )}
                   </Link>
@@ -89,7 +89,7 @@ export function Navbar() {
             >
               <Link
                 to="/contact"
-                className="px-5 py-2.5 rounded-full bg-brand-primary hover:bg-brand-secondary text-white text-sm font-bold transition-all hover:shadow-brand-primary/20 hover:shadow-md"
+                className="px-5 py-2.5 rounded-2xl bg-brand-primary hover:bg-brand-secondary text-white text-sm font-bold transition-all "
               >
                 Get a Free Consultation
               </Link>
@@ -100,7 +100,7 @@ export function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-slate-600 hover:text-brand-primary transition-colors"
+              className="p-2 text-slate-800 hover:text-brand-primary transition-colors"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -124,7 +124,7 @@ export function Navbar() {
                   key={link.path}
                   href={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-white/50 hover:text-brand-highlight"
+                  className="block px-3 py-3 rounded-2xl text-base font-medium text-slate-800 hover:bg-white hover:text-brand-highlight"
                 >
                   {link.name}
                 </a>
@@ -134,10 +134,10 @@ export function Navbar() {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "block px-3 py-3 rounded-md text-base font-medium",
+                    "block px-3 py-3 rounded-2xl text-base font-medium",
                     location.pathname === link.path
                       ? "bg-brand-primary/20 text-brand-primary"
-                      : "text-slate-700 hover:bg-white/50 hover:text-brand-highlight"
+                      : "text-slate-800 hover:bg-white hover:text-brand-highlight"
                   )}
                 >
                   {link.name}
@@ -148,7 +148,7 @@ export function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-5 py-3 rounded-lg bg-brand-primary hover:bg-brand-secondary text-white font-bold"
+                className="block w-full text-center px-5 py-3 rounded-2xl bg-brand-primary hover:bg-brand-secondary text-white font-bold"
               >
                 Get a Free Consultation
               </Link>
