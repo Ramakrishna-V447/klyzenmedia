@@ -41,18 +41,30 @@ export function AnimatedBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden bg-slate-50">
+    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden bg-[#2563EB]">
+      {/* Full Background Workspace Photo */}
+      <div 
+        className="absolute inset-0 opacity-70 mix-blend-overlay pointer-events-none" 
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2000&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      {/* Add a generic dark blend over it to ensure text readability */}
+      <div className="absolute inset-0 opacity-40 bg-[#2563EB] pointer-events-none" />
+
       {/* Interactive gradient mesh background */}
       <motion.div 
-        className="absolute inset-0 opacity-40 transition-transform duration-1000 ease-out"
+        className="absolute inset-0 opacity-20 transition-transform duration-1000 ease-out"
         animate={{
           x: mousePosition.x * 0.05,
           y: mousePosition.y * 0.05,
         }}
       >
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-400 blur-[120px] mix-blend-multiply opacity-50 animate-blob" />
-        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-pink-400 blur-[120px] mix-blend-multiply opacity-50 animate-blob animation-delay-2000" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-cyan-400 blur-[120px] mix-blend-multiply opacity-50 animate-blob animation-delay-4000" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-brand-primary blur-[120px] mix-blend-multiply opacity-10 animate-blob" />
+        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-brand-accent blur-[120px] mix-blend-multiply opacity-20 animate-blob animation-delay-2000" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-gray-100 blur-[120px] mix-blend-multiply opacity-30 animate-blob animation-delay-4000" />
       </motion.div>
 
       {/* Floating images/shapes reacting to scroll and mouse */}
@@ -62,7 +74,7 @@ export function AnimatedBackground() {
           x: mousePosition.x * 0.1,
           y: mousePosition.y * 0.1,
         }}
-        className="absolute top-[10%] right-[10%] w-64 h-64 rounded-3xl bg-gradient-to-br from-indigo-200 to-purple-200 opacity-30 blur-2xl"
+        className="absolute top-[10%] right-[10%] w-64 h-64 rounded-3xl bg-gradient-to-br from-[#3B82F6] to-[#60A5FA] opacity-30 blur-2xl"
       />
       
       <motion.div 
@@ -71,7 +83,7 @@ export function AnimatedBackground() {
           x: mousePosition.x * -0.05,
           y: mousePosition.y * -0.05,
         }}
-        className="absolute top-[40%] left-[5%] w-48 h-48 rounded-full bg-gradient-to-tr from-pink-200 to-orange-200 opacity-20 blur-2xl"
+        className="absolute top-[40%] left-[5%] w-48 h-48 rounded-full bg-gradient-to-tr from-brand-primary to-brand-accent opacity-10 blur-2xl"
       />
 
       <motion.div 
@@ -80,7 +92,7 @@ export function AnimatedBackground() {
           x: mousePosition.x * 0.08,
           y: mousePosition.y * 0.08,
         }}
-        className="absolute bottom-[20%] right-[20%] w-80 h-80 rounded-full bg-gradient-to-t from-cyan-200 to-emerald-200 opacity-25 blur-[100px]"
+        className="absolute bottom-[20%] right-[20%] w-80 h-80 rounded-full bg-gradient-to-t from-[#60A5FA] to-[#3B82F6] opacity-40 blur-[100px]"
       />
       
       {/* Abstract floating image cutouts */}
@@ -90,7 +102,7 @@ export function AnimatedBackground() {
           x: mousePosition.x * 0.02,
           y: mousePosition.y * 0.02,
         }}
-        className="absolute top-[15%] right-[5%] w-48 h-64 opacity-20 rotate-12 rounded-[3rem] overflow-hidden drop-shadow-2xl grayscale"
+        className="absolute top-[15%] right-[5%] w-48 h-64 opacity-10 rotate-12 rounded-[3rem] overflow-hidden drop-shadow-2xl grayscale"
       >
         <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=800&q=80" alt="" className="w-full h-full object-cover" />
       </motion.div>
@@ -101,13 +113,13 @@ export function AnimatedBackground() {
           x: mousePosition.x * -0.03,
           y: mousePosition.y * -0.03,
         }}
-        className="absolute top-[60%] left-[3%] w-56 h-56 opacity-15 -rotate-12 rounded-full overflow-hidden drop-shadow-2xl grayscale"
+        className="absolute top-[60%] left-[3%] w-56 h-56 opacity-10 -rotate-12 rounded-full overflow-hidden drop-shadow-2xl grayscale"
       >
         <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=800&q=80" alt="" className="w-full h-full object-cover" />
       </motion.div>
       
       {/* Pattern overlay */}
-      <div className="absolute inset-0 pattern-dots pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+      <div className="absolute inset-0 pattern-dots pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
     </div>
   );
 }

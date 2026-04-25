@@ -25,7 +25,7 @@ function ScrollToTop() {
 
 function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative min-h-screen flex flex-col text-slate-800 selection:bg-brand-primary/30">
+    <div className="relative min-h-screen flex flex-col text-inherit selection:bg-brand-primary/30">
       <AnimatedBackground />
 
       <Navbar />

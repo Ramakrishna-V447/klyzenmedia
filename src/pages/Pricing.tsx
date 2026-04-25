@@ -78,7 +78,7 @@ export function Pricing() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-display font-bold mb-6 text-slate-800"
+            className="text-3xl md:text-4xl font-display font-bold mb-6 text-inherit"
           >
             Simple, Transparent <span className="text-gradient">Pricing</span> 💎
           </motion.h1>
@@ -86,7 +86,7 @@ export function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-800"
+            className="text-lg text-inherit"
           >
             Invest in your brand's growth with our tailored packages. No hidden fees. Cancel anytime 🤝.
           </motion.p>
@@ -95,7 +95,7 @@ export function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center justify-center gap-6 mt-8 text-sm font-medium text-slate-800"
+            className="flex items-center justify-center gap-6 mt-8 text-sm font-medium text-inherit"
           >
             <div className="flex items-center gap-2"><ShieldCheck className="text-brand-primary" size={18} /> No hidden fees</div>
             <div className="flex items-center gap-2"><ShieldCheck className="text-brand-primary" size={18} /> Cancel anytime</div>
@@ -112,7 +112,7 @@ export function Pricing() {
               transition={{ duration: 0.5, delay: idx * 0.15, type: "spring", bounce: 0.3 }}
               className={cn(
                 "relative glass-card rounded-2xl p-8 flex flex-col hover:-translate-y-2 transition-all duration-300",
-                plan.popular ? "border border-indigo-100 border-2  " : "border border-indigo-100 "
+                plan.popular ? "border border-black/10 border-2  " : "border border-black/10 "
               )}
             >
               {plan.popular && (
@@ -122,16 +122,16 @@ export function Pricing() {
               )}
               
               <div className="mb-8">
-                <h3 className="text-xl font-display font-bold text-slate-800 mb-4 capitalize">{plan.name}</h3>
+                <h3 className="text-xl font-display font-bold text-inherit mb-4 capitalize">{plan.name}</h3>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-slate-800">{plan.price}</span>
-                  <span className="text-slate-800">{plan.period}</span>
+                  <span className="text-4xl font-bold text-inherit">{plan.price}</span>
+                  <span className="text-inherit">{plan.period}</span>
                 </div>
               </div>
               
               <ul className="space-y-4 mb-8 flex-grow">
                 {plan.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex items-start gap-3 text-sm text-slate-800">
+                  <li key={fIdx} className="flex items-start gap-3 text-sm text-inherit">
                     <Check className="text-brand-primary shrink-0 mt-0.5" size={16} />
                     <span>{feature}</span>
                   </li>
@@ -143,8 +143,8 @@ export function Pricing() {
                 className={cn(
                   "w-full py-3 rounded-2xl font-bold text-center transition-all block group",
                   plan.popular 
-                    ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-white border border-indigo-100 hover:bg-indigo-600 hover:shadow-indigo-500/25 hover:-translate-y-1 flex justify-center items-center h-12 brutalist-shadow transition-all" 
-                    : "glass-card text-slate-800 border border-indigo-100 hover:bg-slate-50 hover:border-indigo-100 border"
+                    ? "bg-brand-primary text-black font-bold border border-black/10 hover:bg-brand-primary/90 hover:shadow-brand-primary/25 hover:-translate-y-1 flex justify-center items-center h-12 brutalist-shadow transition-all" 
+                    : "glass-card text-inherit border border-black/10 hover:bg-[#2563EB] hover:text-white hover:border-black/10 border"
                 )}
               >
                 Get Started 🚀
@@ -158,13 +158,13 @@ export function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto glass-card rounded-2xl p-8 md:p-12 border border-indigo-100"
+          className="max-w-3xl mx-auto glass-card rounded-2xl p-8 md:p-12 border border-black/10"
         >
-          <h3 className="text-2xl font-display font-bold text-center mb-8 text-slate-800">Available Add-ons</h3>
+          <h3 className="text-2xl font-display font-bold text-center mb-8 text-inherit">Available Add-ons</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {addons.map((addon, idx) => (
-              <div key={idx} className="text-center p-6 rounded-2xl glass-card border border-indigo-100 hover:border-brand-primary/50 transition-colors">
-                <div className="font-semibold text-slate-800 mb-2">{addon.name}</div>
+              <div key={idx} className="text-center p-6 rounded-2xl glass-card border border-black/10 hover:border-brand-primary/50 transition-colors">
+                <div className="font-semibold text-inherit mb-2">{addon.name}</div>
                 <div className="text-brand-primary font-medium">{addon.price}</div>
               </div>
             ))}

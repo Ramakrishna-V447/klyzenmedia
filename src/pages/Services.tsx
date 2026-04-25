@@ -56,7 +56,7 @@ export function Services() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-display font-bold mb-6 text-slate-800"
+            className="text-3xl md:text-4xl font-display font-bold mb-6 text-inherit"
           >
             Our <span className="text-gradient">Services</span> 🛠️
           </motion.h1>
@@ -64,7 +64,7 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-800"
+            className="text-lg text-inherit"
           >
             Comprehensive digital solutions designed to elevate your brand and drive measurable growth 🚀.
           </motion.p>
@@ -97,11 +97,11 @@ export function Services() {
               >
                 {service.icon}
               </motion.div>
-              <h3 className="text-2xl font-display font-bold mb-4 text-slate-800">{service.title}</h3>
-              <p className="text-slate-800 mb-6 line-clamp-3">{service.desc}</p>
+              <h3 className="text-2xl font-display font-bold mb-4 text-inherit">{service.title}</h3>
+              <p className="text-inherit mb-6 line-clamp-3">{service.desc}</p>
               <ul className="space-y-2">
                 {service.benefits.map((benefit, bIdx) => (
-                  <li key={bIdx} className="flex items-center gap-2 text-sm text-slate-800">
+                  <li key={bIdx} className="flex items-center gap-2 text-sm text-inherit">
                     <div className="w-1.5 h-1.5 rounded-2xl bg-brand-primary" />
                     {benefit}
                   </li>
@@ -119,13 +119,13 @@ export function Services() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 to-brand-secondary/5" />
           <div className="relative z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold mb-6 text-slate-800">Not sure what you need?</h2>
-            <p className="text-slate-800 text-lg mb-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold mb-6 text-inherit">Not sure what you need?</h2>
+            <p className="text-inherit text-lg mb-8 max-w-2xl mx-auto">
               Let's hop on a call. We'll audit your current digital presence and recommend the exact services you need to hit your goals.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-indigo-500 to-pink-500 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-1 transition-all group"
+              className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-brand-primary text-black font-bold shadow-lg shadow-brand-primary/25 hover:shadow-brand-primary/40 hover:-translate-y-1 transition-all group"
             >
               Get a Free Strategy Call
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
