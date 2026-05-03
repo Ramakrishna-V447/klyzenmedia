@@ -50,16 +50,11 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-auto">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <motion.img 
-              whileHover={{ rotate: 180 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+            <img 
               src={logoBase64} 
               alt="Klyzen Media Logo" 
-              className="h-12 w-auto object-contain" 
+              className="h-16 sm:h-20 w-auto object-contain max-h-20" 
             />
-            <span className="font-display font-bold text-2xl tracking-tight text-inherit group-hover:text-brand-primary transition-colors">
-              Klyzen
-            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -75,7 +70,7 @@ export function Navbar() {
                   transition={{ delay: 0.1 + (idx * 0.1) }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-sm font-medium transition-colors hover:text-brand-primary relative text-inherit"
+                  className="text-sm font-bold transition-colors hover:text-brand-primary relative text-inherit"
                 >
                   {link.name}
                 </motion.a>
@@ -91,7 +86,7 @@ export function Navbar() {
                   <Link
                     to={link.path}
                     className={cn(
-                      "text-sm font-medium transition-colors hover:text-brand-primary relative",
+                      "text-sm font-bold transition-colors hover:text-brand-primary relative",
                       location.pathname === link.path ? "text-brand-primary" : "text-inherit"
                     )}
                   >
@@ -148,7 +143,7 @@ export function Navbar() {
                   key={link.path}
                   href={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-3 rounded-2xl text-base font-medium text-inherit hover:bg-gray-50 hover:text-brand-highlight"
+                  className="block px-3 py-3 rounded-2xl text-base font-bold text-inherit hover:bg-gray-50 hover:text-brand-highlight"
                 >
                   {link.name}
                 </a>
@@ -158,7 +153,7 @@ export function Navbar() {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "block px-3 py-3 rounded-2xl text-base font-medium",
+                    "block px-3 py-3 rounded-2xl text-base font-bold",
                     location.pathname === link.path
                       ? "bg-brand-primary/20 text-brand-primary"
                       : "text-inherit hover:bg-gray-50 hover:text-brand-highlight"

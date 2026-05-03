@@ -8,10 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-             <img src={logoBase64} alt="Klyzen Media Logo" className="h-12 w-auto object-contain" />
-              <span className="font-display font-bold text-2xl tracking-tight text-inherit">
-                Klyzen
-              </span>
+             <img src={logoBase64} alt="Klyzen Media Logo" className="h-16 md:h-20 w-auto object-contain" />
             </Link>
             <p className="text-inherit max-w-sm mb-6">
               Turning Ideas into Impact. We help your brand stand out, connect with the right audience, and grow online with purpose.
